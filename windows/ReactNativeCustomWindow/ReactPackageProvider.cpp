@@ -5,7 +5,7 @@
 #endif
 
 #include "FilePicker.h"
-#include "Fullscreen.h"
+#include "Window.h"
 
 using namespace winrt::Microsoft::ReactNative;
 

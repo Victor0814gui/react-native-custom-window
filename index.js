@@ -1,11 +1,13 @@
 // main index.js
-
+import { fullscreen,IWindow } from "./src/Window"
 import { NativeModules } from 'react-native';
 
-const { 
+
+const {
   fullscreen,
-  FilePicker,
+  FilePicker
 } = NativeModules;
+
 
 export {
   fullscreen,

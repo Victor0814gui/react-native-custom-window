@@ -1,0 +1,15 @@
+{
+  "extends": "@tsconfig/react-native/tsconfig.json",
+  "compilerOptions": {
+    "allowJs": true,
+    "declaration": true,
+    "outDir": "./dist",
+    "rootDir": "./src",
+    "moduleResolution": "node",
+    "target": "es6",
+    "module": "commonjs",
+    "jsx": "react-native"
+  },
+  "include": ["src"],
+  "exclude": ["node_modules", "dist"]
+}
