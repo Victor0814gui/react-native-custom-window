@@ -16,10 +16,10 @@ export interface IWindow {
     buttonBackgroud: string,
     buttonBackgroudInative: string,
   ) => void,
-  addBackButton: () => void,
-  removeBackButton: () => void,
-  disabledBackButton: () => void,
-  disableExtend: () => void,
+  addBackButton: () => Promise<void>,
+  removeBackButton: () => Promise<void>,
+  disabledBackButton: () => Promise<void>,
+  disableExtend: () => Promise<void>,
 }
 
 export interface IFilePicker {
