@@ -1,5 +1,4 @@
 // main index.js
-import { fullscreen,IWindow } from "./src/Window"
 import { NativeModules } from 'react-native';
 
 
