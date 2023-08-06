@@ -3,18 +3,18 @@ import { ColorSchemeName } from 'react-native';
 
 
 interface TitleBarProps {
-  backgroundColor: ColorSchemeName;
-  inactiveBackgroundColor: ColorSchemeName;
-  buttonBackgroundColor: ColorSchemeName;
-  buttonInactiveBackgroundColor: ColorSchemeName;
-  buttonForegroundColor: ColorSchemeName;
-  buttonHoverForegroundColor: ColorSchemeName;
-  buttonPressedForegroundColor: ColorSchemeName;
-  buttonInactiveForegroundColor: ColorSchemeName;
-  foregroundColor: ColorSchemeName;
-  inactiveForegroundColor: ColorSchemeName;
-  buttonHoverBackgroundColor: ColorSchemeName;
-  buttonPressedBackgroundColor: ColorSchemeName;
+  backgroundColor: string;
+  inactiveBackgroundColor: string;
+  buttonBackgroundColor: string;
+  buttonInactiveBackgroundColor: string;
+  buttonForegroundColor: string;
+  buttonHoverForegroundColor: string;
+  buttonPressedForegroundColor: string;
+  buttonInactiveForegroundColor: string;
+  foregroundColor: string;
+  inactiveForegroundColor: string;
+  buttonHoverBackgroundColor: string;
+  buttonPressedBackgroundColor: string;
 }
 
 export const titleBar: (props: TitleBarProps) => Promise<void>;

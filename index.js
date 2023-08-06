@@ -1,6 +1,6 @@
 // main index.js
 import { NativeModules } from 'react-native';
-import { titleBar } from "./src/TitleBar.ts"
+import { titleBar } from "./src/TitleBar"
 
 const {
   fullscreen,

@@ -1,7 +1,7 @@
 #pragma once
 
 #include "pch.h"
-//#include "NativeModules.h"
+#include "NativeModules.h"
 
 #include "winrt/Windows.Foundation.h"
 #include "winrt/Windows.UI.ViewManagement.h"

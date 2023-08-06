@@ -1,58 +1,58 @@
 // main index.js
-import { ColorSchemeName, NativeModules } from 'react-native';
+import { NativeModules } from 'react-native';
 
 
 interface TitleBarProps {
-  backgroundColor: ColorSchemeName;
-  inactiveBackgroundColor: ColorSchemeName;
-  buttonBackgroundColor: ColorSchemeName;
-  buttonInactiveBackgroundColor: ColorSchemeName;
-  buttonForegroundColor: ColorSchemeName;
-  buttonHoverForegroundColor: ColorSchemeName;
-  buttonPressedForegroundColor: ColorSchemeName;
-  buttonInactiveForegroundColor: ColorSchemeName;
-  foregroundColor: ColorSchemeName;
-  inactiveForegroundColor: ColorSchemeName;
-  buttonHoverBackgroundColor: ColorSchemeName;
-  buttonPressedBackgroundColor: ColorSchemeName;
+  backgroundColor: string;
+  inactiveBackgroundColor?: string;
+  buttonBackgroundColor?: string;
+  buttonInactiveBackgroundColor?: string;
+  buttonForegroundColor?: string;
+  buttonHoverForegroundColor?: string;
+  buttonPressedForegroundColor?: string;
+  buttonInactiveForegroundColor?: string;
+  foregroundColor?: string;
+  inactiveForegroundColor?: string;
+  buttonHoverBackgroundColor?: string;
+  buttonPressedBackgroundColor?: string;
 }
 
 interface NativeModulesProps {
-  titleBar: (
-    backgroundColor: ColorSchemeName,
-    inactiveBackgroundColor: ColorSchemeName,
-    buttonBackgroundColor: ColorSchemeName,
-    buttonInactiveBackgroundColor: ColorSchemeName,
-    buttonForegroundColor: ColorSchemeName,
-    buttonHoverForegroundColor: ColorSchemeName,
-    buttonPressedForegroundColor: ColorSchemeName,
-    buttonInactiveForegroundColor: ColorSchemeName,
-    foregroundColor: ColorSchemeName,
-    inactiveForegroundColor: ColorSchemeName,
-    buttonHoverBackgroundColor: ColorSchemeName,
-    buttonPressedBackgroundColor: ColorSchemeName,
+  TitlebarColor: (
+    backgroundColor: string,
+    inactiveBackgroundColor: string,
+    buttonBackgroundColor: string,
+    buttonInactiveBackgroundColor: string,
+    buttonForegroundColor: string,
+    buttonHoverForegroundColor: string,
+    buttonPressedForegroundColor: string,
+    buttonInactiveForegroundColor: string,
+    foregroundColor: string,
+    inactiveForegroundColor: string,
+    buttonHoverBackgroundColor: string,
+    buttonPressedBackgroundColor: string,
   ) => Promise<void>;
 }
 
-const { titleBar: TitleBar } = NativeModules as NativeModulesProps;
+const { TitlebarColor: TitleBar } = NativeModules as NativeModulesProps;
 
 
-function titleBar({
-  backgroundColor,
-  inactiveBackgroundColor,
-  buttonBackgroundColor,
-  buttonInactiveBackgroundColor,
-  buttonForegroundColor,
-  buttonHoverForegroundColor,
-  buttonPressedForegroundColor,
-  buttonInactiveForegroundColor,
-  foregroundColor,
-  inactiveForegroundColor,
-  buttonHoverBackgroundColor,
-  buttonPressedBackgroundColor,
+async function titleBar({
+  backgroundColor = "#f2f2f2",
+  inactiveBackgroundColor = "#f2f2f2",
+  buttonBackgroundColor = "#f2f2f2",
+  buttonInactiveBackgroundColor = "#f2f2f2",
+  buttonForegroundColor = "#f2f2f2",
+  buttonHoverForegroundColor = "#f2f2f2",
+  buttonPressedForegroundColor = "#f2f2f2",
+  buttonInactiveForegroundColor = "#f2f2f2",
+  foregroundColor = "#f2f2f2",
+  inactiveForegroundColor = "#f2f2f2",
+  buttonHoverBackgroundColor = "#f2f2f2",
+  buttonPressedBackgroundColor = "#f2f2f2",
 }: TitleBarProps){
 
-  TitleBar(
+  await TitleBar(
     backgroundColor,
     inactiveBackgroundColor,
     buttonBackgroundColor,
@@ -65,7 +65,7 @@ function titleBar({
     inactiveForegroundColor,
     buttonHoverBackgroundColor,
     buttonPressedBackgroundColor,
-  )
+  );
 }
 
 
