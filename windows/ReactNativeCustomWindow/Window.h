@@ -28,82 +28,23 @@ namespace WindowModule {
     REACT_MODULE(FullscreenModule, L"fullscreen");
     struct FullscreenModule final {  
       
-          winrt::Microsoft::ReactNative::ReactContext context;
+        winrt::Microsoft::ReactNative::ReactContext context;
 
-          REACT_INIT(Initialize,L"init");
-          void Initialize(const winrt::Microsoft::ReactNative::ReactContext& reactContext) noexcept
-          {
-            context = reactContext;
-          }
+        REACT_INIT(Initialize,L"init");
+        void Initialize(const winrt::Microsoft::ReactNative::ReactContext& reactContext) noexcept
+        {
+        context = reactContext;
+        }
 
-          REACT_METHOD(RestoreExtendView_Click, L"disableExtend");
-          void RestoreExtendView_Click() noexcept
-          {
-              context.UIDispatcher().Post([] {
+        REACT_METHOD(RestoreExtendView_Click, L"disableExtend");
+        void RestoreExtendView_Click() noexcept
+        {
+            context.UIDispatcher().Post([] {
 
-                  CoreApplication::GetCurrentView().TitleBar().ExtendViewIntoTitleBar(false);
+                CoreApplication::GetCurrentView().TitleBar().ExtendViewIntoTitleBar(false);
 
-              });
-          }
-
-
-          REACT_METHOD(ExtendView_Click, L"enableExtend");
-          void ExtendView_Click() noexcept
-          {
-              context.UIDispatcher().Post([] {
-                  CoreApplication::GetCurrentView().TitleBar().ExtendViewIntoTitleBar(true);
-
-              });
-          }
-
-          REACT_METHOD(TitlebarColor, L"TitlebarColor");
-          void TitlebarColor(
-              std::string background,
-              std::string inativeBackground,
-              std::string backgroundButton,
-              std::string backgroundButtonInative
-          ) noexcept
-          {             
-
-              context.UIDispatcher().Post([background, inativeBackground, backgroundButton, backgroundButtonInative] {
-                  auto titleBar = ApplicationView::GetForCurrentView().TitleBar();
-
-                  Color Bg = ParseColor(background);
-                  Color BgInative = ParseColor(inativeBackground);
-                  Color BgButton = ParseColor(backgroundButton);
-
-                  Color BgButtonInative = ParseColor(backgroundButtonInative);
-
-                  if (background.size() != 0) {
-                      titleBar.BackgroundColor(ColorHelper::FromArgb(Bg.A, Bg.R, Bg.G, Bg.B));
-                  }
-
-                  if (inativeBackground.size() != 0) {
-                      titleBar.InactiveBackgroundColor(ColorHelper::FromArgb(BgInative.A, BgInative.R, BgInative.G, BgInative.B));
-                  }
-
-                  if (backgroundButtonInative.size() != 0) {
-                      titleBar.ButtonInactiveBackgroundColor(ColorHelper::FromArgb(BgButtonInative.A, BgButtonInative.R, BgButtonInative.G, BgButtonInative.B));
-                  }
-                    //titleBar.ForegroundColor(ColorHelper::FromArgb(a, r, g, b));
-                    titleBar.InactiveBackgroundColor(ColorHelper::FromArgb(BgInative.A, BgInative.R, BgInative.G, BgInative.B));
-                    //titleBar.InactiveForegroundColor(ColorHelper::FromArgb(a, r, g, b));
-                    titleBar.ButtonBackgroundColor(ColorHelper::FromArgb(BgButton.A, BgButton.R, BgButton.G, BgButton.B));
-                    // titleBar.ButtonHoverBackgroundColor(Colors::Transparent);
-                    // titleBar.ButtonPressedBackgroundColor(Colors::Transparent);
-                    titleBar.ButtonInactiveBackgroundColor(ColorHelper::FromArgb(BgButtonInative.A, BgButtonInative.R, BgButtonInative.G, BgButtonInative.B));
-
-                    // // Title bar button foreground colors. Alpha must be 255.
-                    // titleBar.ButtonForegroundColor(ColorHelper::FromArgb(255, 232, 211, 162));
-                    // titleBar.ButtonHoverForegroundColor(ColorHelper::FromArgb(0, 0, 0, 255));
-                    // titleBar.ButtonPressedForegroundColor(ColorHelper::FromArgb(255, 54, 60, 116));
-                    // titleBar.ButtonInactiveForegroundColor(ColorHelper::FromArgb(255, 232, 211, 162));
-                 
-
-              });
-          }
-
-
+            });
+        }
 
         REACT_METHOD(AddBackButton, L"addBackButton");
         void AddBackButton() noexcept
@@ -157,13 +98,11 @@ namespace WindowModule {
                 });
           }
 
-          REACT_METHOD(setSize, L"setSize");
-          void setSize(float  w, float  h) noexcept
+          REACT_METHOD(setSize, L"windowSize");
+          void WindowSize(float  w, float  h) noexcept
           {
 
-              context.UIDispatcher().Post([w,h] {
-
-              
+              context.UIDispatcher().Post([w,h] {        
 
                   ApplicationView view = ApplicationView::GetForCurrentView();
                       if (view.TryResizeView({ w,h }))
@@ -174,18 +113,6 @@ namespace WindowModule {
                       }
                   });
           }
-
-           static Windows::UI::Color ParseColor(std::string color)
-          {
-             
-                  Color result;
-                  result.R = std::stoi(color.substr(1, 2), 0, 16);
-                  result.G = std::stoi(color.substr(3, 2), 0, 16);
-                  result.B = std::stoi(color.substr(5, 2), 0, 16);
-                  result.A = 0xff;
-                  return result;           
-                 
-          }          
 
     };
 }
