@@ -1,4 +1,4 @@
-# React Native Native Module - Window Module and FilePicker Module
+# React Native Custom Window
 
 <p align="center">
 <img src=".github/titlebar-color-preview.png" alt="preview thumnail"/>
@@ -28,13 +28,13 @@ react-native link react-native-custom-window
 #### Import
 
 ```javascript
-import { fullscreen } from 'react-native-window-file-picker-module';
+import { titleBar } from 'react-native-custom-window';
 ```
 
 #### Methods
 
 - **enableExtend(): void**
-  Enables the extension of the window, allowing it to go fullscreen.
+  Enables the extension of the window, allowing it to go titleBar.
 
 - **TitlebarColor(background: string, backgroundInactive: string, buttonBackground: string, buttonBackgroundInactive: string): void**
   Sets the title bar color with the provided background and button background colors. The `backgroundInactive` and `buttonBackgroundInactive` are used when the window is inactive.
