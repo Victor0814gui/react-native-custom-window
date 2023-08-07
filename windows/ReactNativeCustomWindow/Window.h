@@ -60,8 +60,8 @@ namespace WindowRN {
             });
         }
 
-        REACT_METHOD(WindowSize, L"windowSize");
-        void WindowSize(float  w, float  h) noexcept
+        REACT_METHOD(SetSize, L"setSize");
+        void SetSize(float  w, float  h) noexcept
         {
 
             context.UIDispatcher().Post([w,h] {        

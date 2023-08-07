@@ -3,13 +3,13 @@ import { NativeModules } from 'react-native';
 import { titleBar } from "./src/TitleBar"
 
 const {
-  fullscreen,
+  window,
   FilePicker,
 } = NativeModules;
 
 
 export {
   titleBar,
-  fullscreen,
+  window,
   FilePicker,
 }

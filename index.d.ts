@@ -16,19 +16,19 @@ interface TitleBarProps {
 }
 
 
+interface ISetSize {
+  width: number;
+  height: number;
+}
+
 
 export interface IWindow {
-  enableExtend: () => void,
-  TitlebarColor: (props: TitleBarProps) => void,
-  addBackButton: () => Promise<void>,
-  removeBackButton: () => Promise<void>,
-  disabledBackButton: () => Promise<void>,
-  disableExtend: () => Promise<void>,
+  fullscreen: () => Promise<void>,
+  setSize: ( width: number, height: number) => Promise<void>,
 }
 
 interface TitleBarProps {
   enableExtend: () => void;
-  TitlebarColor: (props: TitleBarProps) => void;
   addBackButton: () => Promise<void>;
   removeBackButton: () => Promise<void>;
   disabledBackButton: () => Promise<void>;
@@ -40,6 +40,6 @@ export interface IFilePicker {
 }
 
 
-export const fullscreen: IWindow;
+export const window: IWindow;
 export const FilePicker: IFilePicker;
 export const titleBar: (props: TitleBarProps) => Promise<void> | TitleBarProps;
