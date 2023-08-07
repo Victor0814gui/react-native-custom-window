@@ -24,9 +24,9 @@ using namespace Windows::ApplicationModel::Core;
 
 
 
-namespace WindowModule {
-    REACT_MODULE(FullscreenModule, L"fullscreen");
-    struct FullscreenModule final {  
+namespace WindowRN {
+    REACT_MODULE(WindowRNModule, L"window");
+    struct WindowRNModule final {  
       
         winrt::Microsoft::ReactNative::ReactContext context;
 
@@ -34,85 +34,48 @@ namespace WindowModule {
         void Initialize(const winrt::Microsoft::ReactNative::ReactContext& reactContext) noexcept
         {
         context = reactContext;
-        }
+        }     
 
-        REACT_METHOD(RestoreExtendView_Click, L"disableExtend");
-        void RestoreExtendView_Click() noexcept
+        REACT_METHOD(Full, L"fullscreen");
+        void Full() noexcept
         {
             context.UIDispatcher().Post([] {
 
-                CoreApplication::GetCurrentView().TitleBar().ExtendViewIntoTitleBar(false);
-
+                    ApplicationView view = ApplicationView::GetForCurrentView();
+                    if (view.IsFullScreenMode())
+                    {
+                        view.ExitFullScreenMode();
+                        // The SizeChanged event will be raised when the exit from full screen mode is complete.
+                    }
+                    else
+                    {
+                        if (view.TryEnterFullScreenMode())
+                        {
+                            // The SizeChanged event will be raised when the entry to full screen mode is complete.
+                        }
+                        else
+                        {
+                        }
+                    }
             });
         }
 
-        REACT_METHOD(AddBackButton, L"addBackButton");
-        void AddBackButton() noexcept
+        REACT_METHOD(WindowSize, L"windowSize");
+        void WindowSize(float  w, float  h) noexcept
         {
-            context.UIDispatcher().Post([] {
-                auto currentView = winrt::Windows::UI::Core::SystemNavigationManager::GetForCurrentView();
-                currentView.AppViewBackButtonVisibility(AppViewBackButtonVisibility::Visible);
-            });
-        }
 
-        REACT_METHOD(RemoveBackButton, L"removeBackButton");
-        void RemoveBackButton() noexcept
-        {
-            context.UIDispatcher().Post([] {
-            auto currentView = SystemNavigationManager::GetForCurrentView();
-            currentView.AppViewBackButtonVisibility(AppViewBackButtonVisibility::Collapsed);
-            });
-        }
+            context.UIDispatcher().Post([w,h] {        
 
-        REACT_METHOD(RemoveBackButton, L"disabledBackButton");
-          void DisabledBackButton() noexcept
-          {
-              context.UIDispatcher().Post([] {
-                auto currentView = SystemNavigationManager::GetForCurrentView();
-                currentView.AppViewBackButtonVisibility(AppViewBackButtonVisibility::Disabled);
-              });
-          }         
-
-
-          REACT_METHOD(Full, L"full");
-          void Full() noexcept
-          {
-                context.UIDispatcher().Post([] {
-
-                      ApplicationView view = ApplicationView::GetForCurrentView();
-                      if (view.IsFullScreenMode())
-                      {
-                          view.ExitFullScreenMode();
-                          // The SizeChanged event will be raised when the exit from full screen mode is complete.
-                      }
-                      else
-                      {
-                            if (view.TryEnterFullScreenMode())
-                            {
-                                // The SizeChanged event will be raised when the entry to full screen mode is complete.
-                            }
-                            else
-                            {
-                            }
-                      }
+                ApplicationView view = ApplicationView::GetForCurrentView();
+                    if (view.TryResizeView({ w,h }))
+                    {
+                    }
+                    else
+                    {
+                    }
                 });
-          }
+        }
 
-          REACT_METHOD(setSize, L"windowSize");
-          void WindowSize(float  w, float  h) noexcept
-          {
-
-              context.UIDispatcher().Post([w,h] {        
-
-                  ApplicationView view = ApplicationView::GetForCurrentView();
-                      if (view.TryResizeView({ w,h }))
-                      {
-                      }
-                      else
-                      {
-                      }
-                  });
-          }
 
     };
 }

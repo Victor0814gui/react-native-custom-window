@@ -26,11 +26,20 @@ export interface IWindow {
   disableExtend: () => Promise<void>,
 }
 
+interface TitleBarProps {
+  enableExtend: () => void;
+  TitlebarColor: (props: TitleBarProps) => void;
+  addBackButton: () => Promise<void>;
+  removeBackButton: () => Promise<void>;
+  disabledBackButton: () => Promise<void>;
+  disableExtend: () => Promise<void>;
+}
+
 export interface IFilePicker {
-  pickFile: () => Promise<string>,
+  pickFile: () => Promise<string>;
 }
 
 
 export const fullscreen: IWindow;
 export const FilePicker: IFilePicker;
-export const titleBar: (props: TitleBarProps) => Promise<void>;
+export const titleBar: (props: TitleBarProps) => Promise<void> | TitleBarProps;

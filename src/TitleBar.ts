@@ -18,23 +18,25 @@ interface TitleBarProps {
 }
 
 interface NativeModulesProps {
-  TitlebarColor: (
-    backgroundColor: string,
-    inactiveBackgroundColor: string,
-    buttonBackgroundColor: string,
-    buttonInactiveBackgroundColor: string,
-    buttonForegroundColor: string,
-    buttonHoverForegroundColor: string,
-    buttonPressedForegroundColor: string,
-    buttonInactiveForegroundColor: string,
-    foregroundColor: string,
-    inactiveForegroundColor: string,
-    buttonHoverBackgroundColor: string,
-    buttonPressedBackgroundColor: string,
-  ) => Promise<void>;
+  titleBar:{
+    TitlebarColor: (
+      backgroundColor: string,
+      inactiveBackgroundColor: string,
+      buttonBackgroundColor: string,
+      buttonInactiveBackgroundColor: string,
+      buttonForegroundColor: string,
+      buttonHoverForegroundColor: string,
+      buttonPressedForegroundColor: string,
+      buttonInactiveForegroundColor: string,
+      foregroundColor: string,
+      inactiveForegroundColor: string,
+      buttonHoverBackgroundColor: string,
+      buttonPressedBackgroundColor: string,
+      ) => Promise<void>;
+    }
 }
 
-const { TitlebarColor: TitleBar } = NativeModules as NativeModulesProps;
+const { titleBar: TitleBar } = NativeModules as NativeModulesProps;
 
 
 async function titleBar({
@@ -52,7 +54,7 @@ async function titleBar({
   buttonPressedBackgroundColor = "#f2f2f2",
 }: TitleBarProps){
 
-  await TitleBar(
+  await TitleBar.TitlebarColor(
     backgroundColor,
     inactiveBackgroundColor,
     buttonBackgroundColor,
@@ -67,6 +69,7 @@ async function titleBar({
     buttonPressedBackgroundColor,
   );
 }
+
 
 
 export {

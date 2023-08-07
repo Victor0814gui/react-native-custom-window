@@ -1,5 +1,8 @@
 # React Native Native Module - Window Module and FilePicker Module
 
+<p align="center">
+<img src=".github/titlebar-color-preview.png" alt="preview thumnail"/>
+</p>
 This is a native module for React Native that provides access to certain window-related functionalities and file picking capabilities. The module is designed to work with both Android and iOS platforms.
 
 ## Installation
