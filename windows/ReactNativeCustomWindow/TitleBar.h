@@ -33,8 +33,8 @@ namespace TitleBar {
             context = reactContext;
         }
 
-        REACT_METHOD(RestoreExtendView_Click, L"enableExtend");
-        void RestoreExtendView_Click() noexcept
+        REACT_METHOD(EnableExtend, L"enableExtend");
+        void EnableExtend() noexcept
         {
             context.UIDispatcher().Post([] {
 
@@ -43,8 +43,8 @@ namespace TitleBar {
             });
         }
 
-        REACT_METHOD(RestoreExtendView_Click, L"disableExtend");
-        void RestoreExtendView_Click() noexcept
+        REACT_METHOD(DisableExtend, L"disableExtend");
+        void DisableExtend() noexcept
         {
             context.UIDispatcher().Post([] {
 
@@ -127,44 +127,44 @@ namespace TitleBar {
                 Color buttonHoverBackgroundColor = ParseColor(ButtonHoverBackgroundColor);
                 Color buttonPressedBackgroundColor = ParseColor(ButtonPressedBackgroundColor);
 
-                if (background.size() != 0) {
+                if (BackgroundColor.size() != 0) {
                     titleBar.BackgroundColor(ColorHelper::FromArgb(backgroundColor.A, backgroundColor.R, backgroundColor.G, backgroundColor.B));
                 }
 
-                if (inativeBackground.size() != 0) {
+                if (InactiveBackgroundColor.size() != 0) {
                     titleBar.InactiveBackgroundColor(ColorHelper::FromArgb(inactiveBackgroundColor.A, inactiveBackgroundColor.R, inactiveBackgroundColor.G, inactiveBackgroundColor.B));
                 }
 
-                if (backgroundButtonInative.size() != 0) {
+                if (ButtonInactiveBackgroundColor.size() != 0) {
                     titleBar.ButtonInactiveBackgroundColor(ColorHelper::FromArgb(buttonInactiveBackgroundColor.A, buttonInactiveBackgroundColor.R, buttonInactiveBackgroundColor.G, buttonInactiveBackgroundColor.B));
                 }
-                if (foregroundColor.size() != 0) {
+                if (ForegroundColor.size() != 0) {
                     titleBar.ForegroundColor(ColorHelper::FromArgb(foregroundColor.A, foregroundColor.R, foregroundColor.G, foregroundColor.B));
                 }
-                if (inactiveForegroundColor.size() != 0) {
+                if (InactiveForegroundColor.size() != 0) {
                     titleBar.InactiveForegroundColor(ColorHelper::FromArgb(inactiveForegroundColor.A, inactiveForegroundColor.R, inactiveForegroundColor.G, inactiveForegroundColor.B));
                 }
 
-                if (buttonBackgroundColor.size() != 0) {
+                if (ButtonBackgroundColor.size() != 0) {
                     titleBar.ButtonBackgroundColor(ColorHelper::FromArgb(buttonBackgroundColor.A, buttonBackgroundColor.R, buttonBackgroundColor.G, buttonBackgroundColor.B));
                 }
 
-                if (buttonHoverBackgroundColor.size() != 0) {
+                if (ButtonHoverBackgroundColor.size() != 0) {
                     titleBar.ButtonHoverBackgroundColor(ColorHelper::FromArgb(buttonHoverBackgroundColor.A, buttonHoverBackgroundColor.R, buttonHoverBackgroundColor.G, buttonHoverBackgroundColor.B));
                 }
-                if (buttonPressedBackgroundColor.size() != 0) {
+                if (ButtonPressedBackgroundColor.size() != 0) {
                     titleBar.ButtonPressedBackgroundColor(ColorHelper::FromArgb(buttonPressedBackgroundColor.A, buttonPressedBackgroundColor.R, buttonPressedBackgroundColor.G, buttonPressedBackgroundColor.B));
                 }
-                if (buttonForegroundColor.size() != 0) {
+                if (ButtonForegroundColor.size() != 0) {
                     titleBar.ButtonForegroundColor(ColorHelper::FromArgb(buttonForegroundColor.A, buttonForegroundColor.R, buttonForegroundColor.G, buttonForegroundColor.B));
                 }
-                if (buttonHoverForegroundColor.size() != 0) {
+                if (ButtonHoverForegroundColor.size() != 0) {
                     titleBar.ButtonHoverForegroundColor(ColorHelper::FromArgb(buttonHoverForegroundColor.A, buttonHoverForegroundColor.R, buttonHoverForegroundColor.G, buttonHoverForegroundColor.B));
                 }
-                if (buttonPressedForegroundColor.size() != 0) {
+                if (ButtonPressedForegroundColor.size() != 0) {
                     titleBar.ButtonPressedForegroundColor(ColorHelper::FromArgb(buttonPressedForegroundColor.A, buttonPressedForegroundColor.R, buttonPressedForegroundColor.G, buttonPressedForegroundColor.B));
                 }
-                if (buttonPressedForegroundColor.size() != 0) {
+                if (ButtonInactiveForegroundColor.size() != 0) {
                     titleBar.ButtonInactiveForegroundColor(ColorHelper::FromArgb(buttonPressedForegroundColor.A, buttonPressedForegroundColor.R, buttonPressedForegroundColor.G, buttonPressedForegroundColor.B));
                 }
 
