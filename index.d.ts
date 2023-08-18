@@ -1,6 +1,6 @@
 // main index.js
 
-interface TitleBarProps {
+interface TitleBarColorProps {
   backgroundColor: string;
   inactiveBackgroundColor?: string;
   buttonBackgroundColor?: string;
@@ -28,11 +28,12 @@ export interface IWindow {
 }
 
 interface TitleBarProps {
-  enableExtend: () => void;
+  enableExtend: () => Promise<void>;
   addBackButton: () => Promise<void>;
   removeBackButton: () => Promise<void>;
   disabledBackButton: () => Promise<void>;
   disableExtend: () => Promise<void>;
+  TitlebarColor: (props: TitleBarColorProps) => Promise<void>;
 }
 
 export interface IFilePicker {
@@ -42,4 +43,4 @@ export interface IFilePicker {
 
 export const window: IWindow;
 export const FilePicker: IFilePicker;
-export const titleBar: (props: TitleBarProps) => Promise<void> | TitleBarProps;
+export const titleBar: TitleBarProps;

@@ -1,7 +1,11 @@
 // main index.js
-const titleBar = () =>{};
-const window = {};
-const FilePicker = {};
+import { NativeModules } from 'react-native';
+
+const {
+  window,
+  titleBar,
+  FilePicker,
+} = NativeModules;
 
 
 export {

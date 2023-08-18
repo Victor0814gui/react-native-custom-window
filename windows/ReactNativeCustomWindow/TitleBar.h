@@ -71,7 +71,7 @@ namespace TitleBar {
             });
         }
 
-        REACT_METHOD(RemoveBackButton, L"disabledBackButton");
+        REACT_METHOD(DisabledBackButton, L"disabledBackButton");
         void DisabledBackButton() noexcept
         {
             context.UIDispatcher().Post([] {
@@ -83,20 +83,22 @@ namespace TitleBar {
 
         REACT_METHOD(TitlebarColor, L"TitlebarColor");
         void TitlebarColor(
-            std::string BackgroundColor,
-            std::string InactiveBackgroundColor,
-            std::string ButtonBackgroundColor,
-            std::string ButtonInactiveBackgroundColor,
-            std::string ButtonForegroundColor,
-            std::string ButtonHoverForegroundColor,
-            std::string ButtonPressedForegroundColor,
-            std::string ButtonInactiveForegroundColor,
-            std::string ForegroundColor,
-            std::string InactiveForegroundColor,
-            std::string ButtonHoverBackgroundColor,
-            std::string ButtonPressedBackgroundColor
+            JSValueObject colors
         ) noexcept
-        {             
+        {           
+
+            std::string BackgroundColor = colors["BackgroundColor"].AsString();
+            std::string InactiveBackgroundColor = colors["InactiveBackgroundColor"].AsString();
+            std::string ButtonBackgroundColor = colors["ButtonBackgroundColor"].AsString();
+            std::string ButtonInactiveBackgroundColor = colors["ButtonInactiveBackgroundColor"].AsString();
+            std::string ButtonForegroundColor = colors["ButtonForegroundColor"].AsString();
+            std::string ButtonHoverForegroundColor = colors["ButtonHoverForegroundColor"].AsString();
+            std::string ButtonPressedForegroundColor = colors["ButtonPressedForegroundColor"].AsString();
+            std::string ButtonInactiveForegroundColor = colors["ButtonInactiveForegroundColor"].AsString();
+            std::string ForegroundColor = colors["ForegroundColor"].AsString();
+            std::string InactiveForegroundColor = colors["InactiveForegroundColor"].AsString();
+            std::string ButtonHoverBackgroundColor = colors["ButtonHoverBackgroundColor"].AsString();
+            std::string ButtonPressedBackgroundColor = colors["ButtonPressedBackgroundColor"].AsString();
 
             context.UIDispatcher().Post([
             BackgroundColor,
