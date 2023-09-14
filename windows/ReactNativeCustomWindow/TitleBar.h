@@ -87,18 +87,18 @@ namespace TitleBar {
         ) noexcept
         {           
 
-            std::string BackgroundColor = colors["BackgroundColor"].AsString();
-            std::string InactiveBackgroundColor = colors["InactiveBackgroundColor"].AsString();
-            std::string ButtonBackgroundColor = colors["ButtonBackgroundColor"].AsString();
-            std::string ButtonInactiveBackgroundColor = colors["ButtonInactiveBackgroundColor"].AsString();
-            std::string ButtonForegroundColor = colors["ButtonForegroundColor"].AsString();
-            std::string ButtonHoverForegroundColor = colors["ButtonHoverForegroundColor"].AsString();
-            std::string ButtonPressedForegroundColor = colors["ButtonPressedForegroundColor"].AsString();
-            std::string ButtonInactiveForegroundColor = colors["ButtonInactiveForegroundColor"].AsString();
-            std::string ForegroundColor = colors["ForegroundColor"].AsString();
-            std::string InactiveForegroundColor = colors["InactiveForegroundColor"].AsString();
-            std::string ButtonHoverBackgroundColor = colors["ButtonHoverBackgroundColor"].AsString();
-            std::string ButtonPressedBackgroundColor = colors["ButtonPressedBackgroundColor"].AsString();
+            std::string BackgroundColor = colors["backgroundColor"].AsString();
+            std::string InactiveBackgroundColor = colors["inactiveBackgroundColor"].AsString();
+            std::string ButtonBackgroundColor = colors["buttonBackgroundColor"].AsString();
+            std::string ButtonInactiveBackgroundColor = colors["buttonInactiveBackgroundColor"].AsString();
+            std::string ButtonForegroundColor = colors["buttonForegroundColor"].AsString();
+            std::string ButtonHoverForegroundColor = colors["buttonHoverForegroundColor"].AsString();
+            std::string ButtonPressedForegroundColor = colors["buttonPressedForegroundColor"].AsString();
+            std::string ButtonInactiveForegroundColor = colors["buttonInactiveForegroundColor"].AsString();
+            std::string ForegroundColor = colors["foregroundColor"].AsString();
+            std::string InactiveForegroundColor = colors["inactiveForegroundColor"].AsString();
+            std::string ButtonHoverBackgroundColor = colors["buttonHoverBackgroundColor"].AsString();
+            std::string ButtonPressedBackgroundColor = colors["buttonPressedBackgroundColor"].AsString();
 
             context.UIDispatcher().Post([
             BackgroundColor,
