@@ -115,6 +115,8 @@
     <ClInclude Include="FilePicker.h" />
     <ClInclude Include="pch.h" />
     <ClInclude Include="Window.h" />
+    <ClInclude Include="TitleBar.h" />
+    
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="pch.cpp">

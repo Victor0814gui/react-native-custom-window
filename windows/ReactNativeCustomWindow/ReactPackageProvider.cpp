@@ -6,6 +6,7 @@
 
 #include "FilePicker.h"
 #include "Window.h"
+#include "TitleBar.h"
 
 using namespace winrt::Microsoft::ReactNative;
 

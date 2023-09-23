@@ -1,6 +1,6 @@
 #pragma once
 
-//#include "NativeModules.h"
+#include "NativeModules.h"
 
 #include "pch.h"
 #include "FilePicker.h"
