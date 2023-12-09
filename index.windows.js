@@ -1,11 +1,11 @@
 // main index.js
-import { NativeModules } from 'react-native';
+import { TurboModuleRegistry } from 'react-native';
 
-const {
-  window,
-  titleBar,
-  FilePicker,
-} = NativeModules;
+ 
+
+const window = TurboModuleRegistry.get('window');
+const titleBar = TurboModuleRegistry.get('titleBar');
+const FilePicker = TurboModuleRegistry.get('FilePicker');
 
 
 export {
