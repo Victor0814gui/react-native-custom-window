@@ -28,6 +28,58 @@ react-native link react-native-custom-window
 
 ## Usage
 
+### TitleBar Module
+
+#### Import
+
+```javascript
+import { FilePicker } from 'react-native-window-file-picker-module';
+```
+#### Methods
+
+```typescript
+  interface TitleBarColorProps {
+    backgroundColor: string;
+    inactiveBackgroundColor?: string;
+    buttonBackgroundColor?: string;
+    buttonInactiveBackgroundColor?: string;
+    buttonForegroundColor?: string;
+    buttonHoverForegroundColor?: string;
+    buttonPressedForegroundColor?: string;
+    buttonInactiveForegroundColor?: string;
+    foregroundColor?: string;
+    inactiveForegroundColor?: string;
+    buttonHoverBackgroundColor?: string;
+    buttonPressedBackgroundColor?: string;
+  }
+```
+
+- **enableExtend(): Promise<void>**
+  Enables the extension of the window, allowing it to go titleBar.
+
+- **TitlebarColor(props: TitleBarColorProps): Promise<void>**
+  Sets the title bar color with the provided background and button background colors. The `backgroundInactive` and `buttonBackgroundInactive` are used when the window is inactive.
+
+- **addBackButton(): Promise<void>**
+  Adds a custom back button to the window.
+
+- **removeBackButton(): Promise<void>**
+  Removes the custom back button from the window.
+
+- **disableBackButton(): Promise<void>**
+  Disables the functionality of the default back button.
+
+- **disableExtend(): Promise<void>**
+  Disables the window extension, preventing it from going fullscreen.
+
+### FilePicker Module
+
+#### Import
+
+```javascript
+import { FilePicker } from 'react-native-window-file-picker-module';
+```
+
 ### Window Module
 
 #### Import
@@ -38,23 +90,24 @@ import { titleBar } from 'react-native-custom-window';
 
 #### Methods
 
-- **enableExtend(): void**
-  Enables the extension of the window, allowing it to go titleBar.
+```typescript
+  type ISetSize = {
+    width: number;
+    height: number;
+  }
+```
 
-- **TitlebarColor(background: string, backgroundInactive: string, buttonBackground: string, buttonBackgroundInactive: string): void**
-  Sets the title bar color with the provided background and button background colors. The `backgroundInactive` and `buttonBackgroundInactive` are used when the window is inactive.
+- **setSize(props: ISetSize): void**
+  Sets a custom size for the window.
 
-- **addBackButton(): void**
-  Adds a custom back button to the window.
+- **isFullScreen(): Promise<void>**
+  Checks if the window is in fullscreen mode.
 
-- **removeBackButton(): void**
-  Removes the custom back button from the window.
+- **enterFullscreen(): Promise<void>**
+  Activates the fullscreen mode for the window.
 
-- **disableBackButton(): void**
-  Disables the functionality of the default back button.
-
-- **disableExtend(): void**
-  Disables the window extension, preventing it from going fullscreen.
+- **leaveFullscreen(): Promise<void>**
+  Deactivates the fullscreen mode for the window.
 
 ### FilePicker Module
 
@@ -63,6 +116,7 @@ import { titleBar } from 'react-native-custom-window';
 ```javascript
 import { FilePicker } from 'react-native-window-file-picker-module';
 ```
+
 
 #### Method
 
@@ -104,6 +158,7 @@ export default App;
 
 - Android
 - iOS
+- Windows
 
 Note: Please ensure you have the necessary permissions and configurations for file picking functionality on both platforms.
 
