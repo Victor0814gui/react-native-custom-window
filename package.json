@@ -1,7 +1,7 @@
 {
   "name": "react-native-custom-window",
   "title": "React Native Custom Window",
-  "version": "0.22.3",
+  "version": "0.22.4",
   "description": "TODO",
   "main": "index.js",
   "files": [
@@ -10,6 +10,8 @@
     "index.js",
     "ios",
     "windows",
+    "react-native.config.js",
+    "metro.config.windows.js",
     "react-native-custom-window.podspec"
   ],
   "scripts": {
