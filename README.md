@@ -1,12 +1,12 @@
 # React Native Custom Window
 
 <p align="center">
-  <img src="https://img.shields.io/static/v1?label=version&message=0.22.2&color=8257E5&labelColor=000000" alt="version 0.21.0" />
+  <img src="https://img.shields.io/static/v1?label=version&message=0.22.3&color=8257E5&labelColor=000000" alt="version 0.22.3" />
   <img  src="https://img.shields.io/static/v1?label=license&message=MIT&color=8257E5&labelColor=000000" alt="License">   
 </p>
 
 <p align="center">
-<img src=".github/titlebar-color-preview.png" alt="preview thumnail"/>
+<img src=".github/titlebar-color-preview.png" alt="preview thumbnail"/>
 </p>
 This is a native module for React Native that provides access to certain window-related functionalities and file picking capabilities. The module is designed to work with both Android and iOS platforms.
 
