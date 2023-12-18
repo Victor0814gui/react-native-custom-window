@@ -5,10 +5,6 @@ const window = TurboModuleRegistry.get('window');
 const titleBar = TurboModuleRegistry.get('titleBar');
 const FilePicker = TurboModuleRegistry.get('FilePicker');
 
-const window = TurboModuleRegistry.get('window');
-const titleBar = TurboModuleRegistry.get('titleBar');
-const FilePicker = TurboModuleRegistry.get('FilePicker');
-
 export {
   titleBar,
   window,
