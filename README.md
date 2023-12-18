@@ -1,7 +1,7 @@
 # React Native Custom Window
 
 <p align="center">
-  <img src="https://img.shields.io/static/v1?label=version&message=0.22.3&color=8257E5&labelColor=000000" alt="version 0.22.3" />
+  <img src="https://img.shields.io/static/v1?label=version&message=0.22.4&color=8257E5&labelColor=000000" alt="version 0.22.4" />
   <img  src="https://img.shields.io/static/v1?label=license&message=MIT&color=8257E5&labelColor=000000" alt="License">   
 </p>
 
