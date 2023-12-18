@@ -21,10 +21,12 @@ interface ISetSize {
   height: number;
 }
 
-
 export interface IWindow {
+  enterFullscreen: () => Promise<boolean>,
+  leaveFullscreen: () => Promise<boolean>,
+  isFullScreen: () => Promise<boolean>,
   fullscreen: () => Promise<void>,
-  setSize: ( width: number, height: number) => Promise<void>,
+  setSize: (props: ISetSize) => Promise<void>,
 }
 
 interface TitleBarProps {
